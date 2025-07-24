@@ -1,0 +1,64 @@
+﻿@model Target1.Models.Banks
+
+@{
+    ViewData["Title"] = "Detaile";
+}
+
+<h1>Detaile</h1>
+@*<partial name="Notification" />*@
+
+<div col="3">
+    <div>
+        <h4>Product</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Id)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Id)
+            </dd>
+      
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.BankName)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.BankName)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Rates)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Rates)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.LimitLine)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.LimitLine)
+            </dd>
+      @*       <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Imagurl)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Imagurl)
+            </dd> *@
+           
+        </dl>
+    </div>
+    <div Row="4">
+        @*  < img src="@Model.Imagurl" width="100" style="border-radius:5px; border:1px solid #bbb9b9" />*@
+        <img src="@Model.Imagurl" width="200">
+    </div>
+
+
+</div>
+
+<div>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    <a asp-action="Indexx">Back to List</a>
+</div>
+
+
+
+

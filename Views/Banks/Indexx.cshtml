@@ -1,0 +1,161 @@
+﻿
+@model IEnumerable<Target1.Models.Banks>
+@{
+    ViewData["Title"] = "Indexx";
+}
+
+
+
+<h1>Indexx</h1>
+
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+
+          @*   <th>
+                @Html.DisplayNameFor(model => model.BankId)
+            </th> *@
+            <th>
+                @Html.DisplayNameFor(model => model.BankName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rates)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LimitLine)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Imagurl)
+            </th>
+
+
+
+
+
+            <th>
+                <h2>Action</h2>
+            </th>
+
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+
+  
+            @if (item.LimitLine > 2000000 )
+            {
+
+
+
+                <tr class="high-limit">
+
+             
+                <td>
+                    @Html.DisplayFor(modelItem => item.BankName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Rates)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LimitLine)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Imagurl)
+                </td>
+
+
+
+
+                <td>
+                    <a asp-action="Upsert11" asp-route-id="@item.Id">Edit</a>
+                    <a asp-action="Detaile" asp-route-id="@item.Id">Details</a>
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    <a asp-action="Plus" asp-route-id="@item.Id">Plus</a>
+                 @*    <a asp-action="Plus1" asp-route-id="@item.Id">Plus1</a> *@
+                </td>
+            </tr>
+            }
+            @if (item.LimitLine > 0 && item.LimitLine < 2000000)
+            {
+
+
+
+                <tr class="high-limitt">
+
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BankName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Rates)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LimitLine)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Imagurl)
+                    </td>
+
+
+
+
+                    <td>
+                        <a asp-action="Upsert11" asp-route-id="@item.Id">Edit</a>
+                        <a asp-action="Detaile" asp-route-id="@item.Id">Details</a>
+                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                        <a asp-action="Plus" asp-route-id="@item.Id">Plus</a>
+                   @*      <a asp-action="Plus1" asp-route-id="@item.Id">Plus1</a> *@
+                    </td>
+                </tr>
+            }
+            @if (item.LimitLine < 0)
+            {
+
+
+
+                <tr class="high-limito">
+
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BankName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Rates)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LimitLine)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Imagurl)
+                    </td>
+
+
+
+
+                    <td>
+                        <a asp-action="Upsert11" asp-route-id="@item.Id">Edit</a>
+                        <a asp-action="Detaile" asp-route-id="@item.Id">Details</a>
+                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                        <a asp-action="Plus" asp-route-id="@item.Id">Plus</a>
+                     @*    <a asp-action="Plus1" asp-route-id="@item.Id">Plus1</a> *@
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+<div>
+    <a class="btn btn-info" asp-area="" asp-controller="Banks" asp-action="Upsert11">Create<i class="bi bi-file-plus"></i></a>
+
+</div>
+
+
+
+
